@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Meeting rooms {% endblock %}
+{% block content %}
+    <h1>Rooms</h1>
+    <ul>
+      {% for meetingRoom in meetingRooms %}
+      <li>
+        <a href="{% url 'meetingRoom' meetingRoom.id %}"
+          >{{meetingRoom.name}}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+{%endblock%}

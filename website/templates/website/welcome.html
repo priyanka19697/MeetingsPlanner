@@ -1,0 +1,26 @@
+{% extends "base.html" %} 
+{% block title %} Welcome {% endblock %} 
+{% block content %}
+
+<h1>Welcome to the meeting planner</h1>
+<p>
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium
+  <em>
+    voluptatum esse sunt optio aliquam, autem inventore ipsa ducimus! Quae
+  </em>
+  dolor ipsam nisi non! Quibusdam repellendus voluptate distinctio. Nemo, quis
+  necessitatibus.
+</p>
+
+<h2>Meetings</h2>
+<ul>
+  {% for meeting in meetings %}
+  <li>
+    <a href="{% url 'detail' meeting.id %}">{{meeting.title}}</a>
+  </li>
+
+  {% endfor %}
+</ul>
+<a href="{% url 'meetingRooms' %}">Checkout our meeting rooms</a>
+
+{% endblock %}
